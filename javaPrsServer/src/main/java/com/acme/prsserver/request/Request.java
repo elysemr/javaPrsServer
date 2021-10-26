@@ -25,11 +25,11 @@ public class Request {
 	@Column(length=80, nullable=true)
 	private String rejectionReason;
 	@Column(length=20, nullable=false)
-	private String deliveryMode;
+	private String deliveryMode = "Pickup";
 	@Column(length=10, nullable=false)
-	private String status;
+	private String status = "NEW";
 	@Column(columnDefinition="decimal(11,2) NOT NULL DEFAULT 0.0")
-	private BigDecimal total;
+	private Double total;
 	@ManyToOne(optional=false)
 	@JoinColumn(name="userId")
 	private User user;
@@ -115,13 +115,13 @@ public class Request {
 
 
 
-	public BigDecimal getTotal() {
+	public Double getTotal() {
 		return total;
 	}
 
 
 
-	public void setTotal(BigDecimal total) {
+	public void setTotal(Double total) {
 		this.total = total;
 	}
 

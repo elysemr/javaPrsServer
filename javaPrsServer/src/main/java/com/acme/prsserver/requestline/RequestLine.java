@@ -22,7 +22,7 @@ public class RequestLine {
 	@ManyToOne(optional=false)
 	@JoinColumn(name="productId")
 	private Product product;
-	private int quantity;
+	private int quantity = 1;
 	
 	/*
 	 var requestLine = new RequestLine(); 

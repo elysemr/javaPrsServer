@@ -26,7 +26,7 @@ public class Product {
 	@Column(length=30, nullable=false)
 	private String name;
 	@Column(columnDefinition="decimal(11,2) NOT NULL DEFAULT 0.0")
-	private BigDecimal price;
+	private Double price;
 	@Column(length=30, nullable=false)
 	private String unit;
 	@Column(length=255, nullable=true)
@@ -79,13 +79,13 @@ public class Product {
 
 
 
-	public BigDecimal getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
 
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity(name="users")
-@Table(uniqueConstraints=@UniqueConstraint(name="UIDX_password", columnNames= {"password"}))
+@Table(uniqueConstraints=@UniqueConstraint(name="UIDX_username", columnNames= {"username"}))
 public class User {
 	
 	@Id
@@ -88,19 +88,19 @@ public class User {
 		this.email = email;
 	}
 
-	public boolean isReviewer() {
+	public boolean GetIsReviewer() {
 		return isReviewer;
 	}
 
-	public void setReviewer(boolean isReviewer) {
+	public void setIsReviewer(boolean isReviewer) {
 		this.isReviewer = isReviewer;
 	}
 
-	public boolean isAdmin() {
+	public boolean GetIsAdmin() {
 		return isAdmin;
 	}
 
-	public void setAdmin(boolean isAdmin) {
+	public void SetIsAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
 	}
 
