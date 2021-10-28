@@ -89,11 +89,18 @@ public class RequestLinesController {
 		var requestLines = rlRepo.findRequestLineByRequestId(requestId);
 		var total = 0.0;
 		for(var reqLine : requestLines) {
+			if(reqLine.getProduct().getPrice() == null) {
+				var prodId = reqLine.getProduct().getId();
+				var product = prodRepo.findById(prodId).get();
+				reqLine.setProduct(product);
+			}
 			total += reqLine.getQuantity() * reqLine.getProduct().getPrice();
 		}
 		request.setTotal(total);
 		reqRepo.save(request);
 	}
+	
+	
 	
 
 }
